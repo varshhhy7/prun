@@ -1,7 +1,7 @@
 #pragma once 
 #include "../tensor/Tensor.h"
 
-Tensor matmul(const Tensor& A, const Tensor& B){
+inline Tensor matmul(const Tensor& A, const Tensor& B) {
     int m = A.shape[0];
     int n = A.shape[1];
     int p = B.shape[1];

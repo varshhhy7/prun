@@ -4,7 +4,7 @@
 #include <cmath>
 
 // Softmax
-Tensor softmax(const Tensor& input) {
+inline Tensor softmax(const Tensor& input) {
     Tensor output = input;
 
     int rows = input.shape[0];
@@ -32,7 +32,7 @@ Tensor softmax(const Tensor& input) {
     return output;
 }
 
-Tensor attention(const Tensor& Q, const Tensor& K, const Tensor& V) {
+inline Tensor attention(const Tensor& Q, const Tensor& K, const Tensor& V) {
     Tensor scores = matmul(Q, K);
 
     float scale = std::sqrt(K.shape[1]);
